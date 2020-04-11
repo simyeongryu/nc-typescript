@@ -172,3 +172,66 @@ tsc-watch는 마치 nodemon 처럼 ts의 변경사항을 감지해서 자동으�
 
 함수 파라미터에 object를 넘겨보자
 
+```js
+// type을 지정해놓는다.
+interface Human {
+  name: string;
+  age: number;
+  gender: string;
+}
+
+const person = {
+  name: "simyeong",
+  age: 28,
+  gender: "male"
+};
+
+// object를 함수의 파라미터로 사용하는 방법
+const sayHi = (person: Human): string => {
+  return `Hello ${person.name}, You are ${person.age}, you are a ${person.gender}`;
+};
+
+console.log(sayHi(person));
+
+export {};
+```
+
+인터페이스는 js로 컴파일되지 않는다.
+
+# #6 Classes on Typescript part One
+
+클래스는 js로 컴파일이 된다.
+
+상황에 따라 인터페이스와 클래스를 사용하면 된다.
+
+주로 react, express 등을 사용한다면 주로 class를 사용한다.
+
+멤버변수 앞에 public, private 등은 java의 접근한정자와 비슷하다. private이 붙으면 해당 class 내에서만 직접 접근이 가능하다.
+
+```ts
+class Human {
+  // 생성자
+  constructor(name: string, age: number, gender?: string) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
+  // 멤버변수.
+  // 어떤 속성과 권한을 갖고 있는지 선언해줘야 한다.
+  public name: string;
+  public age: number;
+  public gender: string;
+}
+
+const simyeong = new Human("simyeong", 29, "male");
+
+// object를 함수의 파라미터로 사용하는 방법
+const sayHi = (person: Human): string => {
+  return `Hello ${person.name}, You are ${person.age}, you are a ${person.gender}`;
+};
+
+console.log(sayHi(simyeong));
+
+export {};
+
+```
