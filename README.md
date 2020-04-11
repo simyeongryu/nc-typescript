@@ -167,3 +167,8 @@ yarn add typescript
 를 진행하자.
 
 tsc-watch는 마치 nodemon 처럼 ts의 변경사항을 감지해서 자동으로 컴파일 시킨다.
+
+# #5 Interfaces on Typescript
+
+함수 파라미터에 object를 넘겨보자
+
