@@ -58,7 +58,7 @@ alert("hello");
   "repository": "https://github.com/simyeongryu/nc-typescript",
   "author": "simyeongryu <rsm0503@gmail.com>",
   "license": "MIT",
-  "script": {
+  "scripts": {
     "start": "node index.js",
     "prestart": "tsc"
   }
@@ -69,3 +69,35 @@ alert("hello");
 
 typed 언어. 어떤 종류의 변수와 데이터인지 설정해줘야 한다.
 
+타입스크립트의 강점은 미리 변수의 데이터 타입이나, 파라미터 설정 등에 강제를 걸어서 실수를 방지하는 것이다.
+
+```ts
+const name = "Simyeong",
+  age = 24,
+  gender = "male";
+
+const sayHi = (name, age, gender) => {
+  console.log(`Hello ${name}, You are ${age}, you are a ${gender}`);
+};
+
+// Expected 3 arguments, but got 2.
+// 컴파일되지 않는다.
+sayHi(name, age);
+
+export {};
+```
+
+```ts
+const name = "Simyeong",
+  age = 24,
+  gender = "male";
+
+  // 파라미터에 ?를 붙이면 해당 파라미터는 선택사항이 된다.
+const sayHi = (name, age, gender?) => {
+  console.log(`Hello ${name}, You are ${age}, you are a ${gender}`);
+};
+
+sayHi(name, age); // gender의 위치에 undefined 출력
+
+export {};
+```

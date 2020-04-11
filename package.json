@@ -6,7 +6,7 @@
   "repository": "https://github.com/simyeongryu/nc-typescript",
   "author": "simyeongryu <rsm0503@gmail.com>",
   "license": "MIT",
-  "script": {
+  "scripts": {
     "start": "node index.js",
     "prestart": "tsc"
   }
