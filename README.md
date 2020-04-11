@@ -101,3 +101,69 @@ sayHi(name, age); // gender의 위치에 undefined 출력
 
 export {};
 ```
+
+# #4 Types in Typescript
+
+```ts
+// 파라미터에 타입 지정
+const sayHi = (name:string, age:number, gender:string) => {
+  console.log(`Hello ${name}, You are ${age}, you are a ${gender}`);
+};
+// Argument of type '"28"' is not assignable to parameter of type 'number'
+sayHi("Simyeong", "28", "male");
+
+export {};
+```
+
+function에 리턴값이 없으면 void.
+
+```ts
+// 파라미터와 반환값에 타입 지정
+const sayHi = (name: string, age: number, gender: string): void => {
+  // return type을 void로 했는데 string을 반환하고 있으므로 에러
+  return `Hello ${name}, You are ${age}, you are a ${gender}`;
+};
+
+sayHi("Simyeong", 28, "male");
+
+export {};
+```
+
+tsc-watch 패키지 설치
+```
+yarn add tsc-watch --dev
+```
+src 폴더, dist 폴더 생성
+
+package.json 내 scripts 내용 수정
+
+```json
+"scripts": {
+    "start": "tsc-watch --onSuccess \"node dist/index.js\""
+  },
+```
+
+tsconfig.json 내용 수정
+
+```json
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2015",
+    "sourceMap": true,
+    "outDir": "dist" // 컴파일된 결과물이 갈 경로
+  },
+  "include": ["src/**/*"], // src 내에 있는 모든 것들을 컴파일
+  "exclude": ["node_modules"]
+}
+```
+
+tsc-watch가 안되면 전역으로 설치된 ts를 인식하지 못하는 거일 수 있다.
+
+```
+yarn add typescript
+```
+
+를 진행하자.
+
+tsc-watch는 마치 nodemon 처럼 ts의 변경사항을 감지해서 자동으로 컴파일 시킨다.
