@@ -206,7 +206,7 @@ export {};
 
 주로 react, express 등을 사용한다면 주로 class를 사용한다.
 
-멤버변수 앞에 public, private 등은 java의 접근한정자와 비슷하다. private이 붙으면 해당 class 내에서만 직접 접근이 가능하다.
+멤버변수 앞에 `public`, `private` 등은 java의 접근한정자와 비슷하다. `private`이 붙으면 해당 `class` 내에서만 직접 접근이 가능하다.
 
 ```ts
 class Human {
@@ -233,5 +233,7 @@ const sayHi = (person: Human): string => {
 console.log(sayHi(simyeong));
 
 export {};
-
 ```
+
+# #7 Blockchain Creating a Block
+
