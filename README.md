@@ -334,3 +334,6 @@ const getNewTimestamp = (): number => Math.round(new Date().getTime() / 1000);
 
 export {};
 ```
+
+# #9 Creating a Block part Three
+
